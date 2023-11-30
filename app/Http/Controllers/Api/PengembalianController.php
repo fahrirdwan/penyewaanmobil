@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Api;
 
 use Carbon\Carbon;
+use App\Models\History;
 use App\Models\Product;
 use App\Models\Peminjaman;
 use App\Models\Pengembalian;
@@ -41,6 +42,15 @@ class PengembalianController extends Controller
             'tarif' => $durasi * $fee_day
         ]);
         
+        $history = History::create([
+            'user_id' => $req->user_id,
+            'product_id' => $req->product_id,
+            'keterangan' => 'Mengembalikan'
+        ]);
+
+        $product = Product::where('id', $req->product_id)->update([
+            'status' => 'Available'
+        ]);
         return response()->json([
             'message' => 'Berhasil menambahkan data!',
             'data' => $store

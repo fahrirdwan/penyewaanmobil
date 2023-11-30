@@ -2,6 +2,7 @@
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\Api\HistoryController;
 use App\Http\Controllers\Api\ProductController;
 use App\Http\Controllers\Api\PeminjamanController;
 use App\Http\Controllers\Api\PengembalianController;
@@ -38,3 +39,6 @@ Route::delete('/admin/peminjaman/destroy/{id}', [PeminjamanController::class, 'd
 Route::get('/admin/pengembalian', [PengembalianController::class, 'index']);
 Route::post('/admin/pengembalian/store', [PengembalianController::class, 'store']);
 Route::delete('/admin/pengembalian/destroy/{id}', [PengembalianController::class, 'destroy']);
+
+// History
+Route::get('/admin/history', [HistoryController::class, 'index']);
