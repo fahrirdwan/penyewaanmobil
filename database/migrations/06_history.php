@@ -11,14 +11,16 @@ return new class extends Migration
      */
     public function up(): void
     {
-        $table->id();
-        $table->unsignedInteger('user_id');
-        $table->unsignedInteger('product_id');
-        $table->enum('keterangan', ['Meminjam', 'Mengembalikan']);
-        $table->timestamps();
+        Schema::create('history', function (Blueprint $table) {
+            $table->id();
+            $table->unsignedBigInteger('user_id');
+            $table->unsignedBigInteger('product_id');
+            $table->enum('keterangan', ['Meminjam', 'Mengembalikan']);
+            $table->timestamps();
 
-        $table->foreign('product_id')->references('id')->on('products')->onDelete('cascade');
-        $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');
+            $table->foreign('product_id')->references('id')->on('products')->onDelete('cascade');
+            $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');
+        });
     }
 
     /**

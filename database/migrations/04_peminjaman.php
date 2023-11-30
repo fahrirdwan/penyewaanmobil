@@ -11,15 +11,17 @@ return new class extends Migration
      */
     public function up(): void
     {
-        $table->id();
-        $table->unsignedInteger('product_id');
-        $table->unsignedInteger('user_id');
-        $table->timestamps('start');
-        $table->timestamps('end');
-        $table->timestamps();
+        Schema::create('peminjaman', function (Blueprint $table) {
+            $table->id();
+            $table->unsignedBigInteger('product_id');
+            $table->unsignedBigInteger('user_id');
+            $table->date('start');
+            $table->date('end');
+            $table->timestamps();
 
-        $table->foreign('product_id')->references('id')->on('products')->onDelete('cascade');
-        $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');
+            $table->foreign('product_id')->references('id')->on('products')->onDelete('cascade');
+            $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');
+        });
     }
 
     /**

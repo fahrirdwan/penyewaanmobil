@@ -2,6 +2,7 @@
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\Api\ProductController;
 
 /*
 |--------------------------------------------------------------------------
@@ -17,3 +18,9 @@ use Illuminate\Support\Facades\Route;
 Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
     return $request->user();
 });
+
+// Admin
+Route::get('/admin/mobil',[ProductController::class, 'index']);
+Route::post('/admin/mobil/store',[ProductController::class, 'store']);
+Route::put('/admin/mobil/update/{id}',[ProductController::class, 'update']);
+Route::delete('/admin/mobil/destroy/{id}',[ProductController::class, 'destroy']);

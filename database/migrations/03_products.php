@@ -11,16 +11,17 @@ return new class extends Migration
      */
     public function up(): void
     {
-        $table->id();
-        $table->string('name_car', 50);
-        $table->string('merk', 50);
-        $table->string('model', 50);
-        $table->enum('color', ['red','blue','white','silver','gray']);
-        $table->string('no_plat', 15);
-        $table->integer('fee_day');
-        $table->string('picture', 128);
-        $table->enum('status', ['Available', 'Not Available']);
-        $table->timestamps();
+        Schema::create('products', function (Blueprint $table) {
+            $table->id();
+            $table->string('merk', 50);
+            $table->string('model', 50);
+            $table->enum('color', ['red','blue','white','silver','gray','black']);
+            $table->string('no_plat', 15);
+            $table->integer('fee_day');
+            $table->string('picture', 128);
+            $table->enum('status', ['Available', 'Not Available']);
+            $table->timestamps();
+        });
     }
 
     /**
