@@ -22,5 +22,15 @@ class ProductSeeder extends Seeder
             'picture' => 'avanza.png',
             'status' => 'Available'
         ]);
+
+        Product::create([
+            'merk' => 'Suzuki Baleno',
+            'model' => 'Deluxe',
+            'color' => 'black',
+            'no_plat' => 'B 4321 ABC',
+            'fee_day' => 50000,
+            'picture' => 'baleno.png',
+            'status' => 'Available'
+        ]);
     }
 }

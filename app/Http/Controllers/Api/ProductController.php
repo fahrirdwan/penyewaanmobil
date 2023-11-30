@@ -12,10 +12,10 @@ class ProductController extends Controller
 {
     public function index()
     {
-        $data['cars'] = Product::orderByDesc('id')->paginate(8);
+        $data = Product::orderByDesc('id')->paginate(8);
         
         return response()->json([
-            'data' => $data['cars']
+            'data' => $data
         ], 200);
     }
 
@@ -67,11 +67,11 @@ class ProductController extends Controller
         if($update)
         {
             return response()->json([
-                'message' => 'Berhasil update data!'
+                'message' => 'Berhasil memperbarui data!'
             ]);
         }else{
             return response()->json([
-                'message' => 'Gagal update data!'
+                'message' => 'Gagal memperbarui data!'
             ]);
         }
     }
