@@ -9,7 +9,8 @@ class Pengembalian extends Model
 {
     use HasFactory;
     protected $table = 'pengembalian';
-
+    protected $guarded = [];
+    
     public function user()
     {
         return $this->belongsTo(User::class);

@@ -4,6 +4,7 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Api\ProductController;
 use App\Http\Controllers\Api\PeminjamanController;
+use App\Http\Controllers\Api\PengembalianController;
 
 /*
 |--------------------------------------------------------------------------
@@ -32,3 +33,8 @@ Route::get('/admin/peminjaman', [PeminjamanController::class, 'index']);
 Route::post('/admin/peminjaman/store', [PeminjamanController::class, 'store']);
 Route::put('/admin/peminjaman/update/{id}', [PeminjamanController::class, 'update']);
 Route::delete('/admin/peminjaman/destroy/{id}', [PeminjamanController::class, 'destroy']);
+
+// Pengembalian
+Route::get('/admin/pengembalian', [PengembalianController::class, 'index']);
+Route::post('/admin/pengembalian/store', [PengembalianController::class, 'store']);
+Route::delete('/admin/pengembalian/destroy/{id}', [PengembalianController::class, 'destroy']);
