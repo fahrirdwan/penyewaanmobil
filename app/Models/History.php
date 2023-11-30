@@ -8,7 +8,7 @@ use Illuminate\Database\Eloquent\Model;
 class History extends Model
 {
     use HasFactory;
-    protected $table = 'peminjaman';
+    protected $table = 'history';
     protected $guarded = [];
 
     public function user()

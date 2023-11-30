@@ -19,6 +19,7 @@ return new class extends Migration
             $table->bigInteger('no_sim');
             $table->string('email')->unique();
             $table->string('password');
+            $table->string('picture', 128);
             $table->unsignedBigInteger('role_id');
             $table->timestamps();
 

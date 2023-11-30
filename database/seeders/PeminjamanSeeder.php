@@ -2,8 +2,9 @@
 
 namespace Database\Seeders;
 
-use Illuminate\Database\Console\Seeds\WithoutModelEvents;
+use App\Models\Peminjaman;
 use Illuminate\Database\Seeder;
+use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 
 class PeminjamanSeeder extends Seeder
 {
@@ -12,6 +13,11 @@ class PeminjamanSeeder extends Seeder
      */
     public function run(): void
     {
-        //
+        Peminjaman::create([
+            'product_id' => 1,
+            'user_id' => 1,
+            'start' => '2023-12-01',
+            'end' => '2024-01-01',
+        ]);
     }
 }

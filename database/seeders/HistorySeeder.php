@@ -2,8 +2,9 @@
 
 namespace Database\Seeders;
 
-use Illuminate\Database\Console\Seeds\WithoutModelEvents;
+use App\Models\History;
 use Illuminate\Database\Seeder;
+use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 
 class HistorySeeder extends Seeder
 {
@@ -12,6 +13,10 @@ class HistorySeeder extends Seeder
      */
     public function run(): void
     {
-        //
+        History::create([
+            'user_id' => 1,
+            'product_id' => 1,
+            'keterangan' => 'Mengembalikan'
+        ]);
     }
 }

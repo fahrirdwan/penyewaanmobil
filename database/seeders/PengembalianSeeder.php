@@ -2,8 +2,9 @@
 
 namespace Database\Seeders;
 
-use Illuminate\Database\Console\Seeds\WithoutModelEvents;
+use App\Models\Pengembalian;
 use Illuminate\Database\Seeder;
+use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 
 class PengembalianSeeder extends Seeder
 {
@@ -12,6 +13,11 @@ class PengembalianSeeder extends Seeder
      */
     public function run(): void
     {
-        //
+        Pengembalian::create([
+            'product_id' => 1,
+            'user_id' => 1,
+            'durasi' => '30 days',
+            'tarif' => '3000000'
+        ]);
     }
 }

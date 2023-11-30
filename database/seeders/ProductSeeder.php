@@ -2,8 +2,9 @@
 
 namespace Database\Seeders;
 
-use Illuminate\Database\Console\Seeds\WithoutModelEvents;
+use App\Models\Product;
 use Illuminate\Database\Seeder;
+use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 
 class ProductSeeder extends Seeder
 {
@@ -12,6 +13,14 @@ class ProductSeeder extends Seeder
      */
     public function run(): void
     {
-        //
+        Product::create([
+            'merk' => 'Toyota Avanza',
+            'model' => 'Deluxe',
+            'color' => 'black',
+            'no_plat' => 'B 1234 ABC',
+            'fee_day' => 100000,
+            'picture' => 'avanza.png',
+            'status' => 'Available'
+        ]);
     }
 }
